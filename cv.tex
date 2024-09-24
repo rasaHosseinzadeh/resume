@@ -1,14 +1,16 @@
-\documentclass{moderncv}
+\documentclass[11pt,a4paper,sans]{moderncv}
 \moderncvstyle[left]{casual}
 \moderncvcolor{grey}
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.85]{geometry}
+\usepackage[scale=0.75]{geometry}
 \recomputelengths
 
 \firstname{Rasa}
 \lastname{Hosseinzadeh}
 \email{rasa.hosseinzadeh@gmail.com}
 \social[github]{rasaHosseinzadeh}
+\social[googlescholar]{1Evd7mYAAAAJ}
+\social[linkedin]{rasa-hosseinzadeh-6204a6208}
 
 
 \begin{document}
@@ -30,21 +32,39 @@
 {}
 {\textit{GPA: 19.04/20}}
 
+
 \section{Experience}
-\cventry{2021--Now}
+\cventry{2021--Present}
 {Machine Learning Scientist}
 {Layer 6}
-{}{}{}
+{}{}{
+  \begin{itemize}
+    \item Investigated in-context learning for tabular data.
+    \item Developed a three-stage algorithm for territorial risk clustering.
+    \item Explored the manifold hypothesis for deep generative models.
+    \item Analyzed deep generative model evaluation metrics.
+    \item Researched non-autoregressive transformers for translation.
+    \item Implemented automated life insurance adjudication systems.
+  \end{itemize}
+}
 
 \cventry{2019--2021}
 {Research Assistant}
 {University of Toronto, Vector Institute}
-{}{}
-{Under supervision of Prof. Erdogdu.}
+{}
+{Under supervision of Prof. Erdogdu}{
+  \begin{itemize}
+    \item Proved convergence rates for Langevin Monte Carlo in non-convex,
+      non-smooth settings across various distance measures.
+  \end{itemize}
+}
+
 
 \nocite{*}
 \bibliographystyle{unsrt}
+{\small
 \bibliography{./bib}
+}
 
 %\section{Projects}
 %\cvlistitem{
