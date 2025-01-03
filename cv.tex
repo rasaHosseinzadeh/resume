@@ -1,109 +1,100 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
-\moderncvstyle[left]{casual}
-\moderncvcolor{grey}
+\documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.75]{geometry}
-\recomputelengths
+\usepackage[left=1.8cm, right=1.8cm, top=1.8cm, bottom=1.8cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5} % For icons
+\usepackage{enumitem} % For custom itemize styles
+\usepackage{ragged2e} % For better text justification
+\usepackage{amsmath} % For \text command
 
-\firstname{Rasa}
-\lastname{Hosseinzadeh}
-\email{rasa.hosseinzadeh@gmail.com}
-\social[github]{rasaHosseinzadeh}
-\social[googlescholar]{1Evd7mYAAAAJ}
-\social[linkedin]{rasa-hosseinzadeh-6204a6208}
+% Define custom colors - Using a safe professional color (Steel Blue)
+\definecolor{maincolor}{HTML}{4682B4}      % Steel Blue
+\definecolor{maincolorlight}{HTML}{ADD8E6}  % Light Steel Blue
+\definecolor{venuecolor}{HTML}{005f89}   % Dark Steel Blue for venues
+\definecolor{emphasis}{HTML}{222222}
+\definecolor{body}{HTML}{333333}
+\definecolor{linkcolor}{HTML}{003366}     % An even darker shade of blue for links
 
+% Hyperlink formatting
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=linkcolor % Optional: Color for citation links if you were using biblatex
+}
+
+\setlength{\parindent}{0pt}
+
+% Custom section heading command with centered rules
+\newcommand{\cvsection}[1]{%
+    \vspace{10pt}
+    \noindent\hfill\kern0.5em
+    {\Huge \textbf{\textcolor{maincolor}{#1}}}%  Made section heading larger
+    \kern0.5em\hfill\vspace{8pt}
+}
 
 \begin{document}
+\RaggedRight % To prevent hyphenation and improve visual flow
 
-\makecvtitle
-\section{Education}
+% Name and Contact Info
+\begin{center}
+    {\Huge \textbf{\MakeUppercase{Rasa Hosseinzadeh}}} \\[5pt]
+    \href{mailto:rasa.hosseinzadeh@gmail.com}{\textcolor{maincolor}{\faEnvelope}\hspace{0.5em} Email} \hspace{1.5em}
+    \href{https://github.com/rasaHosseinzadeh}{\textcolor{maincolor}{\faGithub}\hspace{0.5em} GitHub} \hspace{1.5em}
+    \href{https://linkedin.com/in/rasa-hosseinzadeh-6204a6208}{\textcolor{maincolor}{\faLinkedin}\hspace{0.5em} LinkedIn} \hspace{1.5em}
+    \href{https://scholar.google.com/citations?user=1Evd7mYAAAAJ}{\textcolor{maincolor}{\faGraduationCap}\hspace{0.5em} Scholar}
+\end{center}
+\vspace{15pt}
 
-\cventry{2019--2020}
-{Master of Sciences}
-{Department of Computer Science, Machine Learning Group}
-{University of Toronto}
-{}
-{\textit{GPA: 4/4}}
+% Education Section
+\cvsection{Education}
 
-\cventry{2013--2018}
-{Bachelor of Science}
-{Double Major in Software Engineering and Mathematics and Applications}
-{Sharif University of Technology}
-{}
-{\textit{GPA: 19.04/20}}
+{\Large \textbf{\textcolor{maincolor}{University of Toronto}}} \\
+\textbf{Master of Science in Computer Science} \hfill 2019 -- 2020 \\
+GPA: 4/4 \\
+\vspace{8pt}
 
+{\Large \textbf{\textcolor{maincolor}{Sharif University of Technology}}} \\
+\textbf{Bachelor of Science in Software Engineering and Mathematics (Double Major)} \hfill 2013 -- 2018 \\
+GPA: 19.04/20 \\
+\vspace{15pt}
 
-\section{Experience}
-\cventry{2021--Present}
-{Machine Learning Scientist}
-{Layer 6}
-{}{}{
-  \begin{itemize}
-    \item Investigated in-context learning for tabular data.
-    \item Developed a three-stage algorithm for territorial risk clustering.
-    \item Explored the manifold hypothesis for deep generative models.
-    \item Analyzed deep generative model evaluation metrics.
-    \item Researched non-autoregressive transformers for translation.
-    \item Implemented automated life insurance adjudication systems.
-  \end{itemize}
-}
+% Experience Section
+\cvsection{Experience}
 
-\cventry{2019--2021}
-{Research Assistant}
-{University of Toronto, Vector Institute}
-{}
-{Under supervision of Prof. Erdogdu}{
-  \begin{itemize}
-    \item Proved convergence rates for Langevin Monte Carlo in non-convex,
-      non-smooth settings across various distance measures.
-  \end{itemize}
-}
+{\Large \textbf{\textcolor{maincolor}{Layer 6}}} \\
+\textbf{Machine Learning Scientist} \hfill 2021 -- Present
+\begin{itemize}[noitemsep, topsep=4pt, leftmargin=1.5em, label=\textcolor{maincolorlight}{$\circ$}]
+    \item Developed in-context learning strategies for tabular foundation models.
+    \item Investigated the manifold hypothesis in the context of generative models.
+    \item Implemented automated adjudication systems for life insurance claims.
+    \item Evaluated and compared various evaluation metrics for generative models.
+    \item Conducted research on non-autoregressive transformer models for translation.
+\end{itemize}
+\vspace{10pt}
 
+{\Large \textbf{\textcolor{maincolor}{Vector Institute}}} \\
+\textbf{Research Assistant} \hfill 2019 -- 2021
+\begin{itemize}[noitemsep, topsep=4pt, leftmargin=1.5em, label=\textcolor{maincolorlight}{$\circ$}]
+    \item Established theoretical convergence rates for ULA in non-convex and non-smooth settings.
+\end{itemize}
+\vspace{15pt}
 
-\nocite{*}
-\bibliographystyle{unsrt}
-{\small
-\bibliography{./bib}
-}
-
-%\section{Projects}
-%\cvlistitem{
-%\textit{Switchable-Shake Normalization:}
-%Shake-shake normalization combining
-%multiple normalization approaches.
-%(\href{https://github.com/csc421/shake_and_switch}{Code})}
-%
-%\cvlistitem{
-%\textit{Bending model for Thin Objects}
-%(\href{https://youtu.be/z9xgnXt054U}{Video})}
-%
-%\cvlistitem{
-%\textit{WikiCrawler}
-%(\href{https://gitlab.com/rasa.hosseinzadeh/Mir3}{Code})}
-%
-%\cvlistitem{
-%\textit{Blend Compiler}
-%(\href{https://gitlab.com/rasa.hosseinzadeh/BlendCompiler}{Code})}
-
-%\section{Awards \& Honors}
-%\cventry{2018}{Nationwide (Iran) Graduate Study
-%Entrance Exam For Computer Engineering}{Ranked 2nd in Artificial Intelligence and 1st in Algorithms and Computation}{}{}{}
-%\cventry{2017}{Nationwide (Iran) Graduate Study
-%Entrance Exam For Computer Engineering}{Ranked 1st in Artificial Intelligence and 1st in Algorithms and Computation}{}{}{}
-%\cventry{2013}{National (Iran) Undergraduate University Entrance Exam}{Ranked 83rd out of 250,000}{}{}{}
-
-% \section{Teaching}
-% \cventry{}{Teaching Assistant}{University of Toronto}{}{}{
-% \begin{itemize}
-% \item Statistical Learning Theory (Spring 2021)
-% \item Introduction to Machine Learning (Fall 2019, Spring 2020, Fall 2020)
-% \item Machine Learning and Data Mining (Spring 2019)
-% \end{itemize}}
-% \cventry{}{Teaching Assistant}{Sharif University of Technology}{}{}{
-% \begin{itemize}
-% \item Artificial Intelligence (Spring 2017, Spring 2018)
-% \item Computer Networks (Fall 2017, Spring 2017)
-% \item Discrete Structures (Spring 2017)
-% \end{itemize}}
+% Publications Section
+\cvsection{Publications}
+\begin{itemize}[noitemsep, topsep=4pt, leftmargin=1.5em, label=\textcolor{maincolorlight}{$\circ$}]
+    \item A Geometric Framework for Understanding Memorization in Generative Models. {\textcolor{venuecolor}{\href{https://arxiv.org/abs/2411.00113}{\textit{arXiv Preprint}}}}.
+    \item TabDPT: Scaling Tabular Foundation Models. {\textcolor{venuecolor}{\href{https://arxiv.org/abs/2410.18164}{\textit{arXiv Preprint}}}}.
+    \item Inconsistencies in Consistency Models: Better ODE Solving Does Not Imply Better Samples. {\textcolor{venuecolor}{\href{https://openreview.net/forum?id=2p4ES8QPUi}{NeurIPS 2024 Workshop}}}.
+    \item MSC-SQL: Multi-Sample Critiquing Small Language Models for Text-to-SQL Translation. {\textcolor{venuecolor}{\href{https://openreview.net/forum?id=RubZlwPv6D}{NeurIPS 2024 Workshop}}}.
+    \item Retrieval \& Fine-Tuning for In-Context Tabular Models. {\textcolor{venuecolor}{\href{https://arxiv.org/abs/2406.05207}{NeurIPS 2024}}}.
+    \item A Geometric View of Data Complexity: Efficient Local Intrinsic Dimension Estimation with Diffusion Models. {\textcolor{venuecolor}{\href{https://arxiv.org/abs/2406.03537}{NeurIPS 2024 \textbf{(Spotlight)}}}}.
+    \item Deep Generative Models through the Lens of the Manifold Hypothesis. {\textcolor{venuecolor}{\href{https://openreview.net/forum?id=a90WpmSi0I}{TMLR 2024}}}.
+    \item Exposing Flaws of Generative Model Evaluation Metrics. {\textcolor{venuecolor}{\href{https://papers.nips.cc/paper_files/paper/2023/hash/0bc795afae289ed465a65a3b4b1f4eb7-Abstract-Conference.html}{NeurIPS 2023}}}.
+    \item DiMS: Distilling Multiple Steps of Iterative Non-Autoregressive Transformers for Machine Translation. {\textcolor{venuecolor}{\href{https://aclanthology.org/2023.findings-acl.542}{Findings of ACL 2023}}}.
+    \item Convergence of Langevin Monte Carlo in Chi-squared and R\'enyi Divergence. {\textcolor{venuecolor}{\href{https://proceedings.mlr.press/v151/erdogdu22a.html}{AISTATS 2022}}}.
+    \item On the Convergence of Langevin Monte Carlo: The Interplay Between Tail Growth and Smoothness. {\textcolor{venuecolor}{\href{https://proceedings.mlr.press/v134/erdogdu21a.html}{COLT 2021}}}.
+\end{itemize}
 
 \end{document}
